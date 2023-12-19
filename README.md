@@ -10,6 +10,7 @@ Inspired by the "Addam's Family," <em> Thing </em> is a robotic hand capable of 
 
 <em> Thing </em> reads input from a file downloaded to the LEGO EV3 brick, filters for profanity, and signs each letter. After all of the words have been signed, the hand will pause, waiting for the heart-shaped cap on the touch sensor to be pressed. Once given a "high five," the robot will "wave" goodbye, and then terminate the program. 
 
+https://github.com/Evie-Boug/ASL_Robotic_Hand/assets/74363173/047bf888-5c1d-408e-8347-b073a8e9a390
 
 ## Acknowledgements
 
