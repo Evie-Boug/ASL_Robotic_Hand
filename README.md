@@ -4,7 +4,7 @@
 
 ## Project Overview
 
-Inspired by the "Addam's Family," <em> Thing </em> is a robotic hand capable of signing American Sign Language (ASL) letters. The goal of this project was to create a robotic system using the LEGO EV3 Mindstorm software and hardware. <em> Thing </em> is custom designed using a combination of LEGO and 3D printed parts. Each finger is individually actuated with 3 joints and 1 DOF. The robot operates usin 6 motors, a touch sensor, and a gyroscope. 
+Inspired by the "Addam's Family," Rubie Luo, Evie Bouganim, Khushi Patel, and Meghan Dang created <em> Thing </em>, a robotic hand capable of signing American Sign Language (ASL) letters. <em> Thing </em> is custom designed using a combination of 3D printed parts and the LEGO EV3 Mindstorms kits. Each finger is individually actuated with 3 joints and 1 DOF. The robot operates using 6 motors, a touch sensor, and a gyroscope. 
 
 ## Operation
 
