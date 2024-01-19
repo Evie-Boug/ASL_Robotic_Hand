@@ -1,13 +1,13 @@
 /**
  * Authors: Khushi Patel, Meghan Dang, Rubie Luo, Evie Bouganim
- * Description: Final 1A Mechatronics project. 'Thing' is a robotic 
+ * Description: Final 1A Mechatronics project. 'Thing' is a robotic
  * 				hand that can perform American Sign Language (ASL)
  * 				letters from file input. Each inputted word is screened
  * 				for profanity. After signing all words, 'high five'
  * 				the touch sensor for it to wave goodbye.
  * Version: 4.0
  * Acknowledgements: We would like to thank the MTE 121 and MTE 100
- * 					 teaching team for supporting us and providing 
+ * 					 teaching team for supporting us and providing
  * 					 some materials throughout the project development.
  */
 
@@ -25,11 +25,11 @@ enum Fingers
 };
 
 const int ENCODER_HOME = 0;
-const int CLOSE_LIM = 140;
+const int CLOSE_LIM = 100;
 const int HALF_LIM = 35;
 const int MOTOR_POWER = 35;
 const int TURN_POWER = 13;
-const int ROLL_JOINT = 55;
+const int ROLL_JOINT = 25;
 const int WAVE_POWER = 20;
 
 // Configures all sensors
@@ -42,7 +42,7 @@ void waitSeconds(int seconds);
 void moveFinger(enum Fingers finger, int encoderTarget);
 
 // Rotate wrist joint
-void moveRoll(int encoderLimit, int motor_power);
+void moveRoll(int gyroLimit, int motor_power);
 
 // Reset Position
 void resetHand();
@@ -84,15 +84,15 @@ task main()
 	{
 	}
 	waitSeconds(3);
-	
+
 	// Declare word input string to store the input
-	string wordInput;			
+	string wordInput;
 	// Create pointer to the first letter of the string, used to divide each char later
-	char *letter = &wordInput;	
+	char *letter = &wordInput;
 	// Read text from file
 	readTextPC(fin, wordInput);
 	// Convert the string to lowercase for consistency
-	toLower(letter);			
+	toLower(letter);
 
 	// Check if word contains profanity, if it does, it will not sign.
 	if (!profanityCheck(wordInput))
@@ -227,7 +227,7 @@ void moveFinger(enum Fingers finger, int encoderTarget)
  * @param motor_power motor power for rotation
  * @return None
  */
-void moveRoll(int gyrorLimit, int motor_power)
+void moveRoll(int gyroLimit, int motor_power)
 {
 	motor[motorA] = motor_power;
 
@@ -582,11 +582,11 @@ void wave()
 bool profanityCheck(char *input)
 {
 	// Constant number of words that have been censored.
-	const int NUM_PROFANE = 7;	 
+	const int NUM_PROFANE = 7;
 	// Array of characters (string) to store text (MAX OF 21 CHARACTERS)
-	char cipheredWord[20] = " "; 
+	char cipheredWord[20] = " ";
 	// Initialize string to store array of chars as a string
-	string cipheredString = "";	 
+	string cipheredString = "";
 
 	// Pass each character of the array of chars to cipher it
 	for (int i = 0; i < strlen(input); i++)
